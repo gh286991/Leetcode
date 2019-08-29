@@ -1,9 +1,11 @@
 const input = "Let's take LeetCode contest"
 
 var reverseWords = function(s) {
-    console.log(s)
     const textArray = s.split(' ')
-    console.log(textArray)
+    const reverse = textArray.map( value => value.split('').reverse().join('')).join(' ')
+    // const reverseString =  reverse.join(' ');  
+
+    return reverse
 };
 
 const ans = reverseWords(input)
