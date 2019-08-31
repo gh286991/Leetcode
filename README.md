@@ -13,6 +13,7 @@
 | 728  | [Self Dividing Numbers](https://leetcode.com/problems/self-dividing-numbers) |       [Js](problems/728.self-dividing-numbers.js)       |                |    Easy    |
 | 807  | [Max Increase to Keep City Skyline](https://leetcode.com/problems/max-increase-to-keep-city-skyline) | [Js](problems/807.max-increase-to-keep-city-skyline.js) |                |   Medium   |
 | 832  | [Flipping an Image](https://leetcode.com/problems/flipping-an-image) |        [Js](problems/832.flipAndInvertImage.js)         |                |    Easy    |
+| 861  | [Score After Flipping Matrix](https://leetcode.com/problems/score-after-flipping-matrix) |            [Js](problems/861.matrixScore.JS)            |                |   Medium   |
 | 883  | [Projection Area of 3D Shapes](https://leetcode.com/problems/projection-area-of-3d-shapes) |          [Js](problems/883.projectionArea.JS)           |                |    Easy    |
 | 905  | [Sort Array By Parity](https://leetcode.com/problems/sort-array-by-parity) |         [Js](problems/905.SortArrayByParity.js)         |                |    Easy    |
 | 922  | [Sort Array By Parity II](https://leetcode.com/problems/sort-array-by-parity-ii) |        [Js](problems/922.sortArrayByParityII.js)        |                |    Easy    |
@@ -23,4 +24,6 @@
 | 1078 | [Occurrences After Bigram](https://leetcode.com/problems/occurrences-after-bigram) |          [Js](problems/1078.findOcurrences.js)          |                |    Easy    |
 | 1108 | [Defanging an IP Address](https://leetcode.com/problems/defanging-an-ip-address) |     [Js](problems/1108.defanging-an-ip-address.js)      |                |    Easy    |
 | 1160 | [Find Words That Can Be Formed by Characters](https://leetcode.com/problems/find-words-that-can-be-formed-by-characters) |         [Js](problems/1160.countCharacters.JS)          |                |    Easy    |
+
+
 
