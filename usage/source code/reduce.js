@@ -11,7 +11,7 @@ const reduce = input.reduce((a,b)=>{
 console.log( 'sum: ',sum)
 console.log('reduce: ',reduce)
 
-const Demo = [[1,2,3] ,[4,5,6]]
+const Demo = [[1,2,3] ,[4,5,6],[7,8,8]]
 
 const horizontalValue=(data)=>{
  const outPut = data.map( (value ,index)=>{

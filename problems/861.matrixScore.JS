@@ -10,25 +10,20 @@ var matrixScore = function(A) {
         if(e==0){
             for (let j = 0; j < A[i].length; j++) {
                 A[i][j] = A[i][j] ^ 1
-            }
-        }
-    }
+    }}}
     
     for (let i = 1; i < col; i++) {
         let zero =0
-
         for (let j = 0; j < row; j++) {
             const value = A[j][i];
             if(value == 0){
                 zero ++
-            }
-        }
+        }}
 
         if(zero >= Math.round(row/2) ){
             for (let j = 0; j < row; j++) {
                 A[j][i] =A[j][i] ^ 1
-            }
-        }
+            }}
     }
     return transToNum(A)
 };
