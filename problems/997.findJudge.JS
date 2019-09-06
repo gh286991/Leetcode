@@ -87,8 +87,6 @@ var findJudge = function(N, trust) {
         return -1
     }
 
-    // console.log('notrusting' , notrusting)
-
     const L = trust.filter( pair => {
         return pair[1] == notrusting
     })
