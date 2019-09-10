@@ -11,9 +11,9 @@ var distanceBetweenBusStops = function(distance, start, destination) {
 
     const N = Math.abs(start-destination)
 
-    const clockwise = Array.from(new Array(N), (val, index) => index+startN)
+    const path1 = Array.from(new Array(N), (val, index) => index+startN)
 
-    const distanceClockwise = clockwise.reduce( (acc, curr)=>{
+    const path1Distance = path1.reduce( (acc, curr)=>{
          return acc + distance[curr]
     },0)
     
@@ -22,7 +22,7 @@ var distanceBetweenBusStops = function(distance, start, destination) {
    },0)
 
    
-   return Math.min(distanceClockwise,total-distanceClockwise)
+   return Math.min(path1Distance,total-path1Distance)
 };
 
 const ans = distanceBetweenBusStops(input.distance , input.start , input.end)
