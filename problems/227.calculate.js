@@ -113,8 +113,15 @@ var calculate= function(s){
   
 
 
-const input =  "42"
+const input =  "42+66"
 // const postfix = toPostfix(input)
-const ans = calculate(input)
+// const ans = calculate(input)
 
-console.log('ans ' , ans)
+// console.log('ans ' , ans)
+
+const array = input.split('')
+
+const result = array.map( val => {
+    return val
+})
+console.log(result)
