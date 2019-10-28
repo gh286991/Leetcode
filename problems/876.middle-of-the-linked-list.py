@@ -23,8 +23,14 @@ class Solution(object):
         while nodeFast and nodeFast.next:
             node = node.next
             nodeFast = nodeFast.next.next
+<<<<<<< HEAD
         
 
         return node
 # @lc code=end
 
+=======
+
+        return node
+# @lc code=end
+>>>>>>> 1dc9b848171f944ec27c559c54c9ab2e6fb05492

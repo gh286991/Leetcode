@@ -40,40 +40,67 @@ const priority = (el) => {
       return 2;
     } return 0;
   };
-  
-const  toPostfix = (infix) => {
-    const formula = infix.split('');
-    const stack = new Stack();
-    const postfix = [];
-  
-    formula.map((el) => {
-      if ('+-*/'.indexOf(el) === -1) {
-        postfix.push(el);
-      } else {
-        const lastPriority = priority(stack.peek());
-        const elPriority = priority(el);
-  
-        if (!stack.isEmpty() && elPriority <= lastPriority) {
-          postfix.push(stack.pop());
-        }
-  
-        stack.push(el);
-      }
-    });
-  
-    while (!stack.isEmpty()) {
-      postfix.push(stack.pop());
+
+const toArray = function(s) {
+    
+    if (s.length === 0) {
+        return 0;
     }
-    return postfix.filter( val => val != ' ');
+    
+    let stack = [];
+    
+    for (let i=0, n=0; i <= s.length; i++) {
+
+        let c = s.charAt(i);
+
+        if(c===' ') continue;
+        
+        if(c >= '0' && c <= '9') {
+            n = n * 10 + parseInt(c);
+            continue;
+        } 
+
+        stack.push(n)
+        stack.push(c)
+        n = 0;
+    }
+
+    stack.splice(stack.length-1,1)
+    return stack
+    
+};
+
+const  toPostfix = (infix) => {
+  const stack = new Stack();
+  const postfix = [];
+
+  infix.forEach((el) => {
+    if ('+-*/'.indexOf(el) === -1) {
+      postfix.push(el);
+    } else {
+      while (!stack.isEmpty()
+       && priority(el) <= priority(stack.peek())
+      ) {
+        postfix.push(stack.pop());
+      }
+
+      stack.push(el);
+    }
+  });
+
+  while (!stack.isEmpty()) {
+    postfix.push(stack.pop());
+  }
+  return postfix;
   };
   
   
 var calculate= function(s){
     const stack = new Stack();
-  
-    const formula = toPostfix(s);
+    const array = toArray(s)
 
-    console.log('formula ' , formula)
+    const formula = toPostfix(array);
+ 
   
     formula.map((el) => {
       if ('+-*/'.indexOf(el) === -1) {
@@ -89,7 +116,7 @@ var calculate= function(s){
             stack.push(cal);
             break;
         case '-':
-            cal = last - penultimate;
+            cal = penultimate - last;
             stack.push(cal);
             break;
           case '*':
@@ -98,7 +125,6 @@ var calculate= function(s){
             break;
         case '/':
             cal = penultimate / last;
-            console.log('cal ', cal)
             stack.push(Math.floor(cal));
             break;
   
@@ -107,16 +133,23 @@ var calculate= function(s){
         }
       }
     });
-  
+    
     return Number(stack.toString());
   };
   
 
 
+<<<<<<< HEAD
 const input =  "42+66"
+=======
+const input =  "6+5*6*6"
+// 2+30-56
+// 32-56
+>>>>>>> 1dc9b848171f944ec27c559c54c9ab2e6fb05492
 // const postfix = toPostfix(input)
 // const ans = calculate(input)
 
+<<<<<<< HEAD
 // console.log('ans ' , ans)
 
 const array = input.split('')
@@ -125,3 +158,7 @@ const result = array.map( val => {
     return val
 })
 console.log(result)
+=======
+
+console.log('ans ' , ans)
+>>>>>>> 1dc9b848171f944ec27c559c54c9ab2e6fb05492
