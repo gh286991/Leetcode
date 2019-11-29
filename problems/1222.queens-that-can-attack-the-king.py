@@ -14,9 +14,10 @@ class Solution(object):
         """
         queenLoc = {}
 
-        for q in queens[0]:
+        for q in queens:
             text = str(q).strip('[]')
             queenLoc.setdefault(text,1)
+
         ans = [];
         dirs = [[1, 0], [0, 1], [-1, 0], [0, -1], [-1, 1], [1, -1], [1, 1], [-1, -1]];
 
@@ -36,19 +37,18 @@ class Solution(object):
 
                     if x < -1 or y<-1 or x >7 or y>7:
                         visited[idx] = True
-                    else:
+
+                    try :
+                        if queenLoc[ str(x)+', '+str(y)]:
+                            visited[idx] = True
+                            ans.append([x,y])
+                    except :
                         pass
-                
-                print('x, y =(', x, y , ')')
-      
-                print('visited' , visited)
-                # print('x' , x)
-
-
             step = step +1
 
+        return ans
 # @lc code=end
-queens = [[0,1],[1,0],[4,0],[0,4],[3,3],[2,4]], 
+queens = [[0,1],[1,0],[4,0],[0,4],[3,3],[2,4]] 
 king = [0,0]
 test = Solution.queensAttacktheKing('self' , queens , king)
 print('test' , test)
