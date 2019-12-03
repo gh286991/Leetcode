@@ -1,23 +1,23 @@
 
+let fizzBuzz = function (n) {
+  const ans = [];
 
-var fizzBuzz = function(n) {
-    let ans= []
-
-    for (let i = 1; i < n+1; i++) {
-        if(i % 3 == 0 && i % 5 == 0){
-            ans.push("FizzBuzz")
-        }else if ( i % 3 == 0 ){
-            ans.push("Fizz")
-        }else if ( i%5 == 0){
-            ans.push("Buzz")
-        }else ans.push(String(i))        
-    }
+  for (let i = 1; i < n + 1; i++) {
+    if (i % 3 == 0 && i % 5 == 0) {
+      ans.push('FizzBuzz');
+    } else if (i % 3 == 0) {
+      ans.push('Fizz');
+    } else if (i % 5 == 0) {
+      ans.push('Buzz');
+    } else ans.push(String(i));
+  }
 
 
-    return ans
+  return ans;
 };
 
 
-const ans = fizzBuzz(20)
+const ans = fizzBuzz(20);
 
 console.log(ans)
+;

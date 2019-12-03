@@ -1,23 +1,23 @@
+/* eslint-disable func-names */
 
-const  nums = [3,3]
-const  target = 6
+const numsInput = [3, 3];
+const targetInput = 6;
 
-var twoSum = function(nums, target) {
-    const list =[]
-    nums.map( (el , ix) =>{
+const twoSum = function (nums, target) {
+  const list = [];
+  nums.foreach((el, ix) => {
+    const Newnums = nums.filter((e, index) => ix !== index);
+    Newnums.map((i) => {
+      const sum = el + i;
+      if (sum === target) {
+        list.push(ix);
+      } return null;
+    });
+  });
 
-        const Newnums = nums.filter((e , index)=> ix != index)
-        Newnums.map((i)=>{
-            const sum = el+i
-            if(sum === target){
-                list.push(ix)
-            }   return null
-        })
-    })
-
-    return list
+  return list;
 };
 
 
-
-console.log('Ans',twoSum(nums ,target ))
+// eslint-disable-next-line no-console
+console.log('Ans', twoSum(numsInput, targetInput));
