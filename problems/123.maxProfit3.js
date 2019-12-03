@@ -38,4 +38,3 @@ const maxProfit = function (prices) {
 const ans = maxProfit(input);
 
 console.log('ans ', ans);
-

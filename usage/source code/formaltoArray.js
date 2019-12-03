@@ -1,4 +1,4 @@
-const input = "42"
+const input = '42';
 
 // const c = input.split('+')
 
@@ -7,32 +7,30 @@ const input = "42"
 // })
 
 
-var calculate = function(s) {
-    
-    if (s.length === 0) {
-        return 0;
-    }
-    
-    let stack = [];
-    
-    for (let i=0, n=0; i <= s.length; i++) {
+const calculate = function (s) {
+  if (s.length === 0) {
+    return 0;
+  }
 
-        let c = s.charAt(i);
+  const stack = [];
 
-        if(c===' ') continue;
-        
-        if(c >= '0' && c <= '9') {
-            n = n * 10 + parseInt(c);
-            continue;
-        } 
+  for (let i = 0, n = 0; i <= s.length; i++) {
+    const c = s.charAt(i);
 
-        stack.push(n)
-        stack.push(c)
-        n = 0;
+    if (c === ' ') continue;
+
+    if (c >= '0' && c <= '9') {
+      n = n * 10 + parseInt(c);
+      continue;
     }
 
-    stack.splice(stack.length-1,1)
-    return stack
+    stack.push(n);
+    stack.push(c);
+    n = 0;
+  }
+
+  stack.splice(stack.length - 1, 1);
+  return stack;
 };
 
-console.log( calculate (input))
+console.log(calculate(input));

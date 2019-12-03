@@ -1,14 +1,11 @@
 
-const test = "1.1.1.1"
+const test = '1.1.1.1';
 
-var defangIPaddr = function(address) {
+const defangIPaddr = function (address) {
+  const result = address.replace(/\./g, '[.]');
 
-    const result = address.replace(/\./g,'[.]');
-
-    return result
-
+  return result;
 };
 
 
-
-defangIPaddr(test)
+defangIPaddr(test);

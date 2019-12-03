@@ -1,5 +1,5 @@
-function testFunction(value){
-    return value*value
+function testFunction(value) {
+  return value * value;
 }
 
-export default testFunction
+export default testFunction;

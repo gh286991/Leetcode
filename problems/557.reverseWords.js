@@ -1,12 +1,12 @@
-const input = "Let's take LeetCode contest"
+const input = "Let's take LeetCode contest";
 
-var reverseWords = function(s) {
-    const textArray = s.split(' ')
-    const reverse = textArray.map( value => value.split('').reverse().join('')).join(' ')
-    // const reverseString =  reverse.join(' ');  
+const reverseWords = function (s) {
+  const textArray = s.split(' ');
+  const reverse = textArray.map((value) => value.split('').reverse().join('')).join(' ');
+  // const reverseString =  reverse.join(' ');
 
-    return reverse
+  return reverse;
 };
 
-const ans = reverseWords(input)
-console.log(ans)
+const ans = reverseWords(input);
+console.log(ans);

@@ -1,3 +1,3 @@
-import testFunction from './export'
+import testFunction from './export';
 
-console.log(testFunction(2))
+console.log(testFunction(2));

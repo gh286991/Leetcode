@@ -10,11 +10,9 @@
  * @param {number[]} king
  * @return {number[][]}
  */
-let queensAttacktheKing = function (queens, king) {
+const queensAttacktheKing = function (queens, king) {
   const map = {};
-  queens.forEach((q) => {
-    return map[q.join(',')] = 1;
-  });
+  queens.forEach((q) => map[q.join(',')] = 1);
 
   // for eight directions, find the first queen
   const ans = [];
@@ -32,8 +30,7 @@ let queensAttacktheKing = function (queens, king) {
         const y = king[1] + step * d[1];
         if (x < 0 || y < 0 || x > 7 || y > 7) {
           visited[i] = true;
-        }
-        else if (map[`${x},${y}`]) {
+        } else if (map[`${x},${y}`]) {
           console.log('dfdf', map[`${x},${y}`]);
           visited[i] = true;
           ans.push([x, y]);

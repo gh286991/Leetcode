@@ -11,8 +11,8 @@
  * @param {string} longUrl
  * @return {string}
  */
-var encode = function(longUrl) {
-    
+const encode = function (longUrl) {
+
 };
 
 /**
@@ -21,8 +21,8 @@ var encode = function(longUrl) {
  * @param {string} shortUrl
  * @return {string}
  */
-var decode = function(shortUrl) {
-    
+const decode = function (shortUrl) {
+
 };
 
 /**
@@ -30,4 +30,3 @@ var decode = function(shortUrl) {
  * decode(encode(url));
  */
 // @lc code=end
-

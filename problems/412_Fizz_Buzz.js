@@ -1,5 +1,5 @@
 
-let fizzBuzz = function (n) {
+const fizzBuzz = function (n) {
   const ans = [];
 
   for (let i = 1; i < n + 1; i++) {
@@ -19,5 +19,4 @@ let fizzBuzz = function (n) {
 
 const ans = fizzBuzz(20);
 
-console.log(ans)
-;
+console.log(ans);
