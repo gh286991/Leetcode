@@ -10,19 +10,19 @@
  * @param {number} val
  * @return {number}
  */
-var removeElement = function(nums, val) {
-    let i = 0
-    while (i<nums.length) {
-        nums[i] === val ? nums.sXplice(i,1) : i++
-    }
+const removeElement = function (nums, val) {
+  let i = 0;
+  while (i < nums.length) {
+    nums[i] === val ? nums.sXplice(i, 1) : i++;
+  }
 
-    return nums.length
+  return nums.length;
 };
 
 // 好像會去CHECK ARRAY的長度?
 // FILTER不能用~~
 // @lc code=end
 
-const input = [3,2,2,3]
-const val = 3
-console.log(removeElement(input , val))
+const input = [3, 2, 2, 3];
+const val = 3;
+console.log(removeElement(input, val));

@@ -24,7 +24,7 @@ const lengthOfLastWord = function (s) {
       return 0;
     }
     return fil[fil.length - 1];
-  }SW
+  }SW;
 
   return res;
 };
