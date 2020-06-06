@@ -1,3 +1,4 @@
+/* eslint-disable func-names */
 /*
  * @lc app=leetcode id=94 lang=javascript
  *
@@ -17,19 +18,18 @@
  * @param {TreeNode} root
  * @return {number[]}
  */
-var inorderTraversal = function(root) {
-    const inorder = (node) => {
+
+// eslint-disable-next-line no-unused-vars
+const inorderTraversal = (root) => {
+  const res = [];
+  const inOrder = (node) => {
     if (node !== null) {
-      
-        inorder(node.left);
+      inOrder(node.left);
       res.push(node.val);
-      inorder(node.right);
+      inOrder(node.right);
     }
   };
-
-  const res = [];
-  inorder(root);
+  inOrder(root, res);
   return res;
 };
 // @lc code=end
-

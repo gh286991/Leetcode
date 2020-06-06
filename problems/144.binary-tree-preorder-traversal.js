@@ -18,7 +18,7 @@
  * @return {number[]}
  */
 
- //Rescusion
+// Rescusion
 // const preorderTraversal = function (root) {
 //   const preorder = (node) => {
 //     if (node !== null) {
@@ -33,25 +33,26 @@
 //   return res;
 // };
 
-const preorderTraversal = function (root) {
-    if(!root) return []
-    const stack = []
-    const res =[]
-    stack.push(root)
-    
-    while (stack.length > 0) {
-        let node = stack.pop()
-        res.push(node.val)
-        console.log('start' , stack)
-        if(node.right){
-            stack.push(node.right)
-        }
-        if(node.left){
-            stack.push(node.left)
-        }
-    }
+// eslint-disable-next-line no-unused-vars
+const preorderTraversal = (root) => {
+  if (!root) return [];
+  const stack = [];
+  const res = [];
+  stack.push(root);
 
-    return res;
-    };
+  while (stack.length > 0) {
+    const node = stack.pop();
+    res.push(node.val);
+
+    if (node.right) {
+      stack.push(node.right);
+    }
+    if (node.left) {
+      stack.push(node.left);
+    }
+  }
+
+  return res;
+};
 
 // @lc code=end

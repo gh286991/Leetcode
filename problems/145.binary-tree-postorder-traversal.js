@@ -17,18 +17,19 @@
  * @param {TreeNode} root
  * @return {number[]}
  */
-var postorderTraversal = function(root) {
-    const postorder = (node) => {
-        if (node !== null) {
-            postorder(node.left);
-            postorder(node.right);
-            res.push(node.val);
-        }
-      };
-    
-      const res = [];
-      postorder(root);
-      return res;
+// eslint-disable-next-line no-unused-vars
+const postorderTraversal = (root) => {
+  const res = [];
+
+  const postorder = (node) => {
+    if (node !== null) {
+      postorder(node.left);
+      postorder(node.right);
+      res.push(node.val);
+    }
+  };
+
+  postorder(root);
+  return res;
 };
 // @lc code=end
-

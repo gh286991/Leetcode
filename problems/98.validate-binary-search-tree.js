@@ -17,19 +17,16 @@
  * @param {TreeNode} root
  * @return {boolean}
  */
-var isValidBST = function(root) {
-    console.log(root)
-    let curr = root 
+const isValidBST = function (root) {
+  console.log(root);
+  const curr = root;
 
-    const valid = (node)=>{
-        let left = node.left
-        let right= node.right
+  const valid = (node) => {
+    const { left } = node;
+    const { right } = node;
 
-        console.left('left' , left)
-        console.left('right', right)
-    }
-
-
+    console.left('left', left);
+    console.left('right', right);
+  };
 };
 // @lc code=end
-
