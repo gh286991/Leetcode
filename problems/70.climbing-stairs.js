@@ -11,5 +11,8 @@
  */
 const climbStairs = function (n) {
 
+    console.log(n)
 };
+
+climbStairs(2)
 // @lc code=end
