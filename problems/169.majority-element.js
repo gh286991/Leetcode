@@ -13,6 +13,8 @@ var majorityElement = function(nums) {
     const map = {}
     let ans
 
+    if(nums.length === 1) return nums[0]
+
     nums.forEach( (item ) => {
         if(!map[item]){
             map[item] = 1
