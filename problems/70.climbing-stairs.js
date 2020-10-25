@@ -10,9 +10,8 @@
  * @return {number}
  */
 const climbStairs = function (n) {
-
-    console.log(n)
+  console.log(n);
 };
 
-climbStairs(2)
+climbStairs(2);
 // @lc code=end

@@ -1,11 +1,18 @@
-/* eslint-disable func-names */
+/*
+ * @lc app=leetcode id=1 lang=javascript
+ *
+ * [1] Two Sum
+ */
 
-const numsInput = [3, 3];
-const targetInput = 6;
-
+// @lc code=start
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */
 const twoSum = function (nums, target) {
   const list = [];
-  nums.foreach((el, ix) => {
+  nums.forEach((el, ix) => {
     const Newnums = nums.filter((e, index) => ix !== index);
     Newnums.map((i) => {
       const sum = el + i;
@@ -17,7 +24,4 @@ const twoSum = function (nums, target) {
 
   return list;
 };
-
-
-// eslint-disable-next-line no-console
-console.log('Ans', twoSum(numsInput, targetInput));
+// @lc code=end

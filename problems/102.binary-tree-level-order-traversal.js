@@ -17,25 +17,24 @@
  * @param {TreeNode} root
  * @return {number[][]}
  */
-var levelOrder = function(root) {
-    const res = []
-    
-    const search= (root , level) =>{
-        if(root){
-            if(res.length < level){
-                res.push([])
-            }
+const levelOrder = function (root) {
+  const res = [];
 
-            const arr = res[level-1]
-            arr.push(root.val)
-            search(root.left, level+1)
-            search(root.right, level+1)
-        }else return
-    }
+  const search = (root, level) => {
+    if (root) {
+      if (res.length < level) {
+        res.push([]);
+      }
 
-    search(root,1)
+      const arr = res[level - 1];
+      arr.push(root.val);
+      search(root.left, level + 1);
+      search(root.right, level + 1);
+    } else return;
+  };
 
-    return res
+  search(root, 1);
+
+  return res;
 };
 // @lc code=end
-

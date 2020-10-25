@@ -9,29 +9,27 @@
  * @param {number[]} nums
  * @return {number}
  */
-var majorityElement = function(nums) {
-    const map = {}
-    let ans
+const majorityElement = function (nums) {
+  const map = {};
+  let ans;
 
-    if(nums.length === 1) return nums[0]
+  if (nums.length === 1) return nums[0];
 
-    nums.forEach( (item ) => {
-        if(!map[item]){
-            map[item] = 1
-        }else{
-            map[item] = map[item] +1
-            if( map[item] >= nums.length/2){
-                ans = item
-            }
-        }
-    })
+  nums.forEach((item) => {
+    if (!map[item]) {
+      map[item] = 1;
+    } else {
+      map[item] = map[item] + 1;
+      if (map[item] >= nums.length / 2) {
+        ans = item;
+      }
+    }
+  });
 
-    return ans
-
+  return ans;
 };
 
 // const data = [2,2,1,1,1,2,2]
 
 // majorityElement(data)
 // @lc code=end
-
