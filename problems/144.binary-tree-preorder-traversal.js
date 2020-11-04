@@ -19,40 +19,44 @@
  */
 
 // Rescusion
-// const preorderTraversal = function (root) {
-//   const preorder = (node) => {
-//     if (node !== null) {
-//       res.push(node.val);
-//       preorder(node.left);
-//       preorder(node.right);
-//     }
-//   };
+const preorderTraversal = function (root) {
+  const preorder = (node) => {
+    if (node !== null) {
+      res.push(node.val);
+      preorder(node.left);
+      preorder(node.right);
+    }
+  };
 
-//   const res = [];
-//   preorder(root);
-//   return res;
-// };
-
-// eslint-disable-next-line no-unused-vars
-const preorderTraversal = (root) => {
-  if (!root) return [];
-  const stack = [];
   const res = [];
-  stack.push(root);
-
-  while (stack.length > 0) {
-    const node = stack.pop();
-    res.push(node.val);
-
-    if (node.right) {
-      stack.push(node.right);
-    }
-    if (node.left) {
-      stack.push(node.left);
-    }
-  }
-
+  preorder(root);
   return res;
 };
+
+// eslint-disable-next-line no-unused-vars
+// const preorderTraversal = (root) => {
+//   if (!root) return [];
+//   const stack = [];
+//   const res = [];
+//   stack.push(root);
+
+//   console.log('stack d' , stack)
+//   while (stack.length > 0) {
+//     const node = stack.pop();
+    
+//     res.push(node.val);
+
+//     if (node.right) {
+//       stack.push(node.right);
+//     }
+//     if (node.left) {
+//       stack.push(node.left);
+//     }
+
+//     console.log('stack' , stack)
+//   }
+
+//   return res;
+// };
 
 // @lc code=end
