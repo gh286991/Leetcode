@@ -26,7 +26,7 @@ const majorityElement = function (nums) {
     }
   });
 
-  console.log(map)
+  console.log(map);
 
   return ans;
 };

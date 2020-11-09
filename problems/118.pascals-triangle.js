@@ -9,20 +9,19 @@
  * @param {number} numRows
  * @return {number[][]}
  */
-var generate = function(numRows) {
-    let pascal = [[1]];
+const generate = function (numRows) {
+  const pascal = [[1]];
 
-    for (let i = 0; i < numRows - 1; i++) {
-      let lastRow = pascal[i];
-        const A = [0, ...lastRow]
-        const B = [...lastRow, 0]
-      const nextRow = A.map((num, i) => num + B[i])
+  for (let i = 0; i < numRows - 1; i++) {
+    const lastRow = pascal[i];
+    const A = [0, ...lastRow];
+    const B = [...lastRow, 0];
+    const nextRow = A.map((num, i) => num + B[i]);
 
-      pascal.push(nextRow);
-    }
-  
-    return numRows >= 1 ? pascal : [];
+    pascal.push(nextRow);
+  }
+
+  return numRows >= 1 ? pascal : [];
 };
 
 // @lc code=end
-

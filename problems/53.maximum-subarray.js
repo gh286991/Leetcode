@@ -9,6 +9,7 @@
  * @param {number[]} nums
  * @return {number}
  */
+
 const maxSubArray = function (nums) {
   let curr = 0;
   let res = nums[0];
@@ -21,6 +22,7 @@ const maxSubArray = function (nums) {
 
   return res;
 };
+
 // @lc code=end
 
 const input = [-2, 1, -3, 4, -1, 2, 1, -5, 4];

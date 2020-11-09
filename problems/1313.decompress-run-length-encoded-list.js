@@ -10,21 +10,19 @@
  * @return {number[]}
  */
 
-var decompressRLElist = function(nums) {
-    
-    const ansArray = []
-    let temp
-    nums.forEach( (item, index)=>{
-        if(index % 2 === 0){
-            temp = item
-        }else{
-            for (let i = 0; i < temp; i++) {
-                ansArray.push(item)
-            }
-        }
-    })
+const decompressRLElist = function (nums) {
+  const ansArray = [];
+  let temp;
+  nums.forEach((item, index) => {
+    if (index % 2 === 0) {
+      temp = item;
+    } else {
+      for (let i = 0; i < temp; i++) {
+        ansArray.push(item);
+      }
+    }
+  });
 
-    return ansArray
+  return ansArray;
 };
 // @lc code=end
-
