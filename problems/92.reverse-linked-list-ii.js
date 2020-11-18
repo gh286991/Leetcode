@@ -62,37 +62,37 @@
 //   return dummyHead.next;
 // };
 
-const reverseBetween = function (head, m, n) {
-    let p = dummyNode = new ListNode()
-    p.next = head
-    const count = n-m 
+// const reverseBetween = function (head, m, n) {
+//     let p = dummyNode = new ListNode()
+//     p.next = head
+//     const count = n-m 
 
-    let pre; 
-    let cur; 
-    let front; 
-    let tail;
+//     let pre; 
+//     let cur; 
+//     let front; 
+//     let tail;
 
-    for (let i = 0; i < m - 1; i++) {
-            p = p.next;
-        }
+//     for (let i = 0; i < m - 1; i++) {
+//             p = p.next;
+//         }
     
-    front = p
-    pre = tail = p.next;
-    cur = pre.next;
+//     front = p
+//     pre = tail = p.next;
+//     cur = pre.next;
 
-    for (let i = 0; i < count; i++) {
-        let next = cur.next;
-        cur.next = pre;
-        pre = cur;
-        cur = next;
-    }
+//     for (let i = 0; i < count; i++) {
+//         let next = cur.next;
+//         cur.next = pre;
+//         pre = cur;
+//         cur = next;
+//     }
 
-    front.next = pre
-    tail.next = cur
+//     front.next = pre
+//     tail.next = cur
 
-    return dummyNode.next
+//     return dummyNode.next
 
-  };
+//   };
 
 // function ListNode(val, next) {
 //   this.val = (val === undefined ? 0 : val);
@@ -126,4 +126,31 @@ const reverseBetween = function (head, m, n) {
 
 // const ans = reverseBetween(data, start, end);
 // console.log('ans' , ans)
+
+const reverseBetween = function (head, m, n) {
+    let p = dummyNode = new ListNode()
+    p.next = head
+
+    let front,pre,tail,cur
+
+    for(let i = 0; i < m-1; i++) {
+      p = p.next
+    }
+
+    front = p 
+    tail = pre =p.next
+    cur = pre.next
+    
+    for (let i = 0; i < n-m; i++) {
+        let next = cur.next
+        cur.next = pre
+        pre = cur
+        cur = next
+    }
+
+    front.next = pre
+    tail.next = cur
+
+    return dummyNode.next
+    };
 // @lc code=end
