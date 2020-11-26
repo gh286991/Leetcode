@@ -20,27 +20,35 @@
 var rotateRight = function(head, k) {
     
     const pointer = dummyHead = new ListNode()
+    if(!head || !head.next) return head
 
-    for (let i = 0; i < k; i++) {
-        
-        pointer.next = head
+    let length = 1
+    pointer.next = head
+
+    let fast = pointer.next
+    //Get Length and reduce loop
+    while(fast.next){
+        fast = fast.next
+        length = length +1
+    }
+
+    for (let i = 0; i <  k % length; i++) {
+
         let cur = pointer.next
+
         while (cur) {
-            console.log(cur)
             if(!cur.next.next){
-                console.log('last two' ,cur )
                 const behind = pointer.next
                 pointer.next = cur.next
                 pointer.next.next = behind
-                console.log('pointer' ,pointer)
                 cur.next = null
             }
             cur = cur.next
         }
+        
     }
-    
-
-    console.log('dummyHead' , dummyHead)
+   
+    return dummyHead.next
 };
 // @lc code=end
 

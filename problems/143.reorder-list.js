@@ -18,38 +18,56 @@
  */
 const reorderList = head => {
     if (!head || !head.next || !head.next.next) return head;
-  
-    let slow = head;
-    let fast = head.next;
-    while (fast && fast.next) {
-      slow = slow.next;
-      fast = fast.next.next;
+
+    const pointer = dummyHead = new ListNode()
+    pointer.next = head
+
+    let rightList = findMedium(pointer.next)
+    let reverseRightList = reverseLsit(rightList)
+    let leftList = pointer.next
+
+    while(reverseRightList.next && leftList){
+      let leftBehind = leftList.next
+      let rightBehind = reverseRightList.next
+
+
+      leftList.next = reverseRightList;
+      reverseRightList.next = leftBehind;
+
+      leftList = leftBehind
+      reverseRightList= rightBehind
     }
-  
-    let prev = slow.next;
-    let tail = prev.next;
-    while (tail) {
-      const next = tail.next;
-      tail.next = prev;
-      prev = tail;
-      tail = next;
+
+    return dummyHead.next
+};
+
+
+const findMedium = (LinkList) =>{
+  let slow = LinkList.next
+  let fast = LinkList.next.next
+
+  while(fast && fast.next){
+    slow = slow.next
+    fast = fast.next.next
+  }
+
+  return slow
+}
+
+const reverseLsit = (LinkList) =>{
+
+    if (!LinkList)
+        return null;
+
+    let pre = null, node = LinkList, cur=null;
+
+    while (node) {
+        pre = cur
+        cur = node
+        node = node.next
+        cur.next = pre
     }
-    slow.next.next = null;
-    slow.next = prev;
-  
-    let left = head;
-    let right = slow.next;
-    slow.next = null;
-    while (left && right) {
-      const ln = left.next;
-      const rn = right.next;
-      left.next = right;
-      right.next = ln;
-      left = ln;
-      right = rn;
-    }
-  
-    return head;
-  };
+    return cur;
+}
 // @lc code=end
 
