@@ -17,11 +17,12 @@
  * @return {ListNode}
  */
 const deleteDuplicates = function (head) {
-  const res = new ListNode();
+  const res = new ListNode(null);
   let curr = res;
+  if(!head) return null
 
   while (head) {
-    if (curr && curr.val == head.val) {
+    if (curr.val === head.val) {
       head = head.next;
     } else {
       curr.next = new ListNode(head.val);
