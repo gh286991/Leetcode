@@ -18,7 +18,22 @@
  * @return {string[]}
  */
 var binaryTreePaths = function(root) {
+    const res =[]
+
+    const treePath = (node , path)=> {
+        if(node){
+            path = path ? `${path}->${node.val}`:`${node.val}`
+            if(node.left || node.right){
+                treePath(node.left, path)
+                treePath(node.right, path)
+            } else{
+                res.push(path)
+            }
+        }
+    }
     
+    treePath(root, '')
+    return res
 };
 // @lc code=end
 
